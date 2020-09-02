@@ -84,13 +84,14 @@ window.onload=function(){
       hasil[i] = "";
     };
     document.getElementById('inputAlkitab').focus();
-    ayatToDisplay.innerHTML = "";
+   
     
     proses(e)
   };
 
   
   function display(){
+     ayatToDisplay.innerHTML = "";
     ayatToDisplay.style.display='block';
     ayatToDisplay.style.textAlign='left';
     var sup;
