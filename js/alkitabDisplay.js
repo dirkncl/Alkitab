@@ -102,7 +102,7 @@ window.onload=function(){
     };
     document.getElementById('inputAlkitab').value = "";
     document.getElementById('inputAlkitab').focus();
-    ayatToDisplay.textContent = result = ""
+    ayatToDisplay.innerHTML = result = ""
   };
  
   document.addEventListener("keydown",function(e){
