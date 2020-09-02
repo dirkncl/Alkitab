@@ -79,7 +79,16 @@ window.onload=function(){
     
   };
   
-  document.getElementById('inputAlkitab').onchange = function(e){proses(e);};
+  document.getElementById('inputAlkitab').onchange = function(e){
+    for(var i=0;i<hasil.length;i++){
+      hasil[i] = "";
+    };
+    document.getElementById('inputAlkitab').focus();
+    ayatToDisplay.innerHTML = ""
+    
+    proses(e);display()
+  };
+
   
   function display(){
     ayatToDisplay.style.display='block';
