@@ -96,7 +96,9 @@ window.onload=function(){
     if(hasil.length>1){
       for(var i=0;i<hasil.length;i++){
         sup = hasil[i].split(".").pop();
-        result += "<sup>"+sup+"</sup>" + getAyatAlkitab(hasil[i])+"<br><br>";
+        if(getAyatAlkitab(hasil[i])!==""){
+          result += "<sup>"+sup+"</sup>" + getAyatAlkitab(hasil[i])+"<br><br>";
+        }
       }
       ayatToDisplay.innerHTML="<br>"+result;
     }  
