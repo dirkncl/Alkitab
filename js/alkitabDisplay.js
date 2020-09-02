@@ -69,11 +69,9 @@ window.onload=function(){
       for(var i = 0;i<ayat.length;i++){
         hasil[i] = toSemiOsis(kitab+" "+pasal+":"+ayat[i]+"")
       }
-      display();
     }  
     else {
       hasil[0] = toSemiOsis(kitab+" "+pasal+":"+ayat[0]+"")
-      display();
     }
     if(Kitab_Pasal_Ayat=="")ayatToDisplay.style.display = 'none';
     
