@@ -69,9 +69,11 @@ window.onload=function(){
       for(var i = 0;i<ayat.length;i++){
         hasil[i] = toSemiOsis(kitab+" "+pasal+":"+ayat[i]+"")
       }
+      //display();
     }  
     else {
       hasil[0] = toSemiOsis(kitab+" "+pasal+":"+ayat[0]+"")
+      //display();
     }
     if(Kitab_Pasal_Ayat=="")ayatToDisplay.style.display = 'none';
     
@@ -82,14 +84,13 @@ window.onload=function(){
       hasil[i] = "";
     };
     document.getElementById('inputAlkitab').focus();
-   
     
-    proses(e)
+    
+    proses(e);
   };
-
   
   function display(){
-     ayatToDisplay.innerHTML = "";
+    ayatToDisplay.innerHTML = "";
     ayatToDisplay.style.display='block';
     ayatToDisplay.style.textAlign='left';
     var sup;
