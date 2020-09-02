@@ -1,4 +1,4 @@
-﻿/*************************************/
+/*************************************/
 /*     Dirk L. Nicolaas              */
 /*    Masih dalam tahap proses       */ 
 /*  belajar dari yang sederhana      */
@@ -44,8 +44,8 @@ window.onload=function(){
   };
 
   document.getElementById('inputAlkitab').focus();
-  var ayatToDisplay=document.getElementById('ayatToDisplay');
-  ayatToDisplay.textContent = "";
+  var ayatToDisplay = document.getElementById('ayatToDisplay');
+  ayatToDisplay.innerHTML = "";
   var Kitab_Pasal_Ayat = "";
   var ls = location.search;
   var par ="";
@@ -69,14 +69,17 @@ window.onload=function(){
       for(var i = 0;i<ayat.length;i++){
         hasil[i] = toSemiOsis(kitab+" "+pasal+":"+ayat[i]+"")
       }
+      display();
     }  
     else {
       hasil[0] = toSemiOsis(kitab+" "+pasal+":"+ayat[0]+"")
+      display();
     }
     if(Kitab_Pasal_Ayat=="")ayatToDisplay.style.display = 'none';
+    
   };
   
-  document.getElementById('inputAlkitab').addEventListener("keyup",proses);
+  document.getElementById('inputAlkitab').onchange = function(e){proses(e);};
   
   function display(){
     ayatToDisplay.style.display='block';
@@ -91,6 +94,7 @@ window.onload=function(){
     }  
     else{
       sup = hasil[0].split(".").pop();
+      console.log(sup)
       result = "<sup>"+sup+"</sup>" + getAyatAlkitab(hasil[0]);
       ayatToDisplay.innerHTML="<br>"+result;
     }
@@ -151,4 +155,3 @@ var scrollbar = `
   
 `;
 (sty=document.createElement("style")).textContent=scrollbar,document.head.appendChild(sty)
-
