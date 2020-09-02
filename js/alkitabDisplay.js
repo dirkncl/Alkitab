@@ -84,9 +84,9 @@ window.onload=function(){
       hasil[i] = "";
     };
     document.getElementById('inputAlkitab').focus();
-    ayatToDisplay.innerHTML = ""
+    ayatToDisplay.innerHTML = "";
     
-    proses(e);display()
+    proses(e)
   };
 
   
