@@ -8,7 +8,7 @@
 /*************************************/
 
 
- var FilterKitab = [                                            //standard singkatan
+  var FilterKitab = [
   [/^G[en]\D*/i,      "Gen"],[/^K[e]?j\D*/i,      "Gen"],       //Kej.
   [/^Ex\D*/i,      "Exod"], [/^K[e]?l\D*/i,      "Exod"],       //Kel.
   [/^L[ev]\D*/i,      "Lev"],[/^I[ma]\D*/i,      "Lev"],        //Ima.
@@ -29,7 +29,7 @@
   [/^J[o]?b\D*/i,      "Job"],[/^Ayb\D*/i,      "Job"],         //Ayb.
   [/^P[s]\D*/i,      "Ps"],[/^Ma?z\D*/i,      "Ps"],            //Maz.
   [/^P[r]?o\D*/i,      "Prov"],[/^A[m]?s\D*/i,      "Prov"],    //Ams.
-  [/^E[cc]\D*/i,      "Eccl"],[/^Pkh\D*/i,      "Eccl"],        //Pkh.
+  [/^E[cc]\D*/i,      "Eccl"],[/^Pkh\D*/i,      "Eccl"], [/^Pen\D*/i,      "Eccl"],        //Pkh.
   [/^S[o]n\D*/i,      "Song"],[/^Kid\D*/i,      "Song"],        //Kid.
   [/^I[s?a]\D*/i,      "Isa"],[/^Ye[s]\D*/i,      "Isa"],       //Yes.
   [/^J[er]\D*/i,      "Jer"],[/^Ye[r?]\D*/i,      "Jer"],       //Yer.
@@ -51,32 +51,32 @@
   [/^Ma?t?t\D*/i,    "Matt"],                                   //Mat.
   [/^Ma?[rk]\D*/i,  "Mark"],                                    //Mar.
   [/^L\D*/i,      "Luke"],                                      //Luk.
-  [/^Jo?[hn]\D*/i,  "John"],[/^Yo?[ha]\D*/i,  "John"],          //Yoh.
+  [/^Jo?[hn]\D*/i,  "John"],[/^Yo?[h]\D*/i,  "John"],          //Yoh.
   [/^Act\D*/i,      "Acts"],[/^Kis*/i,      "Acts"],            //Kis.
   [/^R[om]\D*/i,    "Rom"],                                     //Rom.
   [/^1\s*C\D*/i,    "1Cor"],[/^1\s*Kor\D*/i,    "1Cor"],        //1Kor.
   [/^2\s*C\D*/i,    "2Cor"], [/^2\s*Kor\D*/i,    "2Cor"],       //2Kor.
   [/^Gal\D*/i,      "Gal"],                                     //Gal.
   [/^Eph\D*/i,      "Eph"],[/^Efe\D*/i,      "Eph"],            //Efe.
-  [/^P[h]il\D*/i,      "Phil"],[/^Fl\D*/i,      "Phil"],        //Flp.
+  [/^P[h]il\D*/i,      "Phil"],[/^Flp\D*/i,      "Phil"],[/^Fil[i]\D*/i,      "Phil"],        //Flp.
   [/^C\D*/i,      "Col"],[/^K[o]l\D*/i,      "Col"],            //Kol.
   [/^1\s*Th\D*/i,    "1Thess"],[/^1\s*Te\D*/i,    "1Thess"],    //1Tes.
   [/^2\s*Th\D*/i,    "2Thess"],[/^2\s*Te\D*/i,    "2Thess"],    //2Tes.
   [/^1\s*T[im]\D*/i,  "1Tim"],                                  //1Tim.
   [/^2\s*T[im]\D*/i,  "2Tim"],                                  //2Tim.
   [/^Tit\D*/i,      "Titus"],                                   //Tit.
-  [/^Ph\w*m\D*/i,    "Phlm"],[/^F\w*m\D*/i,    "Phlm"],         //Flm.
+  [/^Ph\w*m\D*/i,    "Phlm"],[/^Fl\w*m\D*/i,    "Phlm"],[/^Fi[l]\w*e\D*/i,    "Phlm"],         //Flm.
   [/^Heb\D*/i,      "Heb"],[/^Ibr\D*/i,      "Heb"],            //Ibr.
-  [/^J[mas]\D*/i,    "Jas"],[/^Y[ak]\D*/i,    "Jas"],           //Yak.
+  [/^J[mas]\D*/i,    "Jas"],[/^Y?ak\D*/i,    "Jas"],          //Yak.
   [/^1\s*P\D*/i,    "1Pet"],                                    //1Pet.
   [/^2\s*P\D*/i,    "2Pet"],                                    //2Pet.
-  [/^1\s*J\D*/i,    "1John"],[/^1\s*Y\D*/i,    "1John"],        //1Yoh.
-  [/^2\s*J\D*/i,    "2John"],[/^2\s*Y\D*/i,    "2John"],        //2Yoh.
-  [/^3\s*J\D*/i,    "3John"],[/^3\s*Y\D*/i,    "3John"],        //3Yoh.
+  [/^1\s*J\D*/i,    "1John"],[/^1\s*Yo?[ha]\D*/i,    "1John"],        //1Yoh.
+  [/^2\s*J\D*/i,    "2John"],[/^2\s*Yo?[ha]\D*/i,    "2John"],        //2Yoh.
+  [/^3\s*J\D*/i,    "3John"],[/^3\s*Yo?[ha]\D*/i,    "3John"],        //3Yoh.
   [/^Jud\D*/i,      "Jude"],[/^Yu\D*/i,      "Jude"],           //Yud.
-  [/^R[ev]\D*/i,    "Rev"],[/^W[ah]\D*/i,    "Rev"]             //Wah.
-
+  [/^R[ev]\D*/i,    "Rev"],[/^W[ah]\D*/i,    "Rev"], [/^Why\D*/i,    "Rev"]             //Wah.
 ];
+
 
 
 //KITAB Pasal:Ayat k_p_a
