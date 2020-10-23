@@ -33,12 +33,17 @@ function alkitab(verse_refrence, version){
   alkitabDB={
     id_TB:"data/alkitab-tb",
     en_kjv:"data/bible-kjv"
+    en_akjv:"data/bible-akjv"
   };
   var versionName
   switch (version.toUpperCase()){
     case "": 
+    case "TB-LAI":
     case "TB": ver = alkitabDB.id_TB;   versionName = "Alkitab (TB - LAI)";break;
+    case "AV":
     case "KJV":ver = alkitabDB.en_kjv; versionName = "Bible (KJV - 1769)";break;
+    case "A-KJV":
+    case "AKJV":ver = alkitabDB.en_akjv; versionName = "Bible (American - KJV)";break;
   }
   
   var alkitabArray=[]; 
