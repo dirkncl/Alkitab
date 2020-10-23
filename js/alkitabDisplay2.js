@@ -32,7 +32,7 @@ function alkitab(verse_refrence, version){
   var alkitabDB;
   alkitabDB={
     id_TB:"data/alkitab-tb",
-    en_kjv:"data/bible-kjv"
+    en_kjv:"data/bible-kjv",
     en_akjv:"data/bible-akjv"
   };
   var versionName
