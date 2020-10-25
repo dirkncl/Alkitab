@@ -26,7 +26,7 @@
   [/^E[z]?r\D*/i,      "Ezra"],                                 //Ezr.
   [/^N[eh]\D*/i,      "Neh"],                                   //Neh.
   [/^E?st\D*/i,      "Esth"],                                   //Est.
-  [/^J[o]?b\D*/i,      "Job"],[/^Ayb\D*/i,      "Job"],         //Ayb.
+  [/^J[o]?b\D*/i,      "Job"],[/^Ayb\D*/i,      "Job"], [/^Ayub\D*/i,      "Job"],         //Ayb.
   [/^P[s]\D*/i,      "Ps"],[/^Ma?z\D*/i,      "Ps"],            //Maz.
   [/^P[r]?o\D*/i,      "Prov"],[/^A[m]?s\D*/i,      "Prov"],    //Ams.
   [/^E[cc]\D*/i,      "Eccl"],[/^Pkh\D*/i,      "Eccl"], [/^Pen\D*/i,      "Eccl"],        //Pkh.
