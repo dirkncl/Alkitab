@@ -11,7 +11,11 @@
 var ref_ayat ="";
 var bible_version;
 var InputString = decodeURIComponent(location.search).replace(/\+/g, " ").replace('?','');
-
+var inputs;
+if(InputString.includes("&")){
+  inputs = InputString.split("&")
+  InputString = inputs[0]
+}
 if(InputString.includes("[")){
   InputString = InputString.split("[")
   ref_ayat = InputString[0].trim()
@@ -131,7 +135,6 @@ function alkitab(verse_refrence, version){
     }  
     else{
       sup = hasil[0].split(".").pop();
-      console.log(sup)
       result = "<sup>"+sup+"</sup>" + getAyatAlkitab(hasil[0]);
       ayatToDisplay.innerHTML="<br>"+result;
     }
