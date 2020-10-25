@@ -102,6 +102,7 @@ function alkitab(verse_refrence, version){
   if (verse_refrence !== ""){
     loadingKitab(ver);
     document.getElementById('version').innerHTML = versionName;
+    document.getElementById('ref_ayat').innerHTML = verse_refrence+" "+version;
     document.title = versionName;
     inputAlkitab = verse_refrence
     proses(window.event);
