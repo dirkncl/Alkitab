@@ -21,6 +21,11 @@ if(InputString.includes("[")){
   ref_ayat = InputString[0].trim()
   bible_version = InputString[1].replace("]","")
 }
+else if(InputString.includes("(")){
+  InputString = InputString.split("(")
+  ref_ayat = InputString[0].trim()
+  bible_version = InputString[1].replace(")","")
+}
 else{
     ref_ayat = InputString
     bible_version = ""
