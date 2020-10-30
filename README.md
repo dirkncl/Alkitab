@@ -30,13 +30,22 @@ https://dirkncl.github.io/Alkitab/?Kitab pasal:ayat1,ayat2,ayat3
 
 ## Test
 https://dirkncl.github.io/Alkitab/?Kejadian
+
 https://dirkncl.github.io/Alkitab/?Genesis--KJV
+
 https://dirkncl.github.io/Alkitab/?Kejadian%201
+
 https://dirkncl.github.io/Alkitab/?Genesis%201--KJV
+
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1
+
 https://dirkncl.github.io/Alkitab/?Genesis%201:1--KJV
+
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1-20
+
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1-20--KJV
+
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1,5,7,20
+
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1,5,7,20--KJV
 
