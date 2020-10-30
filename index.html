@@ -8,15 +8,15 @@
     <meta name="author" content="Dirk L. Nicolaas - Sulawesi Utara - Indonesia">
     <title>Alkitab (TB - LAI)</title>
     <link rel="stylesheet" href="style/alkitabParser.css" />
-    <script src="js/alkitabParser.js"></script>
-    <script src="js/alkitabDisplay.js"></script>
+    <script src="js/refParser.js"></script>
+    <script src="js/getVerses.js"></script>
   </head>
   <body>
-    <center> 
-      <h3 style="color:ivory">Alkitab (TB - LAI)</h3>  
-      <input type='text' style='width:400px;' id="inputAlkitab" value="" placeholder='Tulis ayat [Yoh. 3:16 atau Joh 3:16]'></input>
-      <div style='padding: 0 28px;border-radius: 10px;background-color:#003300;color:ivory;font-size:1.1em;opacity:0.8;width:400px;max-height:300px;overflow-y:scroll;display:none'id="ayatToDisplay"></div>
-      
-    </center>
-    </body>
+
+      <h3 id = "version" style="position: fixed;color:ivory;top:0;left: 50%;transform: translate(-50%);text-align: center;"></h3>  
+      <div style="position: absolute;top: 8%;left: 50%;transform: translate(-50%);text-align: center;background-color:#003300;border-radius: 10px;" id="holder">
+      <div style="border-radius: 10px 10px 0px 0px;font-size:1.2em;background-color:#005500;color:ivory;" id = "ref_ayat" style="color:ivory"></div>  
+      <div style='padding: 0 28px;border-radius: 10px;background-color:#003300;color:ivory;font-size:1.1em;opacity:0.8;width:400px;max-height:500px;overflow-y:scroll;display:none'id="ayatToDisplay"><div id="content"></div></div>
+         </body>
 </html>
+
