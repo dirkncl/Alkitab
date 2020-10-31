@@ -125,7 +125,7 @@
   [/^1\s*C\D*/i,    "1Cor"],[/^1\s*Kor\D*/i,    "1Cor"],        //1Kor.
   [/^2\s*C\D*/i,    "2Cor"], [/^2\s*Kor\D*/i,    "2Cor"],       //2Kor.
   [/^Gal\D*/i,      "Gal"],                                     //Gal.
-  [/^Eph\D*/i,      "Eph"],[/^Efe\D*/i,      "Eph"],            //Efe.
+  [/^Eph\D*/i,      "Eph"],[/^E[fe]\D*/i,      "Eph"],            //Efe.
   [/^P[h]il\D*/i,      "Phil"],[/^Flp\D*/i,      "Phil"],[/^Fil[i]\D*/i,      "Phil"],        //Flp.
   [/^C\D*/i,      "Col"],[/^K[o]l\D*/i,      "Col"],            //Kol.
   [/^1\s*Th\D*/i,    "1Thess"],[/^1\s*Te\D*/i,    "1Thess"],    //1Tes.
