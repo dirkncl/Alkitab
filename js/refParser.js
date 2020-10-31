@@ -105,7 +105,7 @@
   [/^E[zek]\D*/i,      "Ezek"],[/^Y[e?h]\D*/i,      "Ezek"],    //Yeh.
   [/^D[a]?n\D*/i,      "Dan"],                                  //Dan.
   [/^H[os]\D*/i,      "Hos"],                                   //Hos.
-  [/^Joe\D*/i,      "Joel"],[/^Yoe\D*/i,      "Joel"],          //Yoe.
+  [/^Joe\D*/i,      "Joel"],[/^Y[l|oe]\D*/i,      "Joel"],      //Yoe.
   [/^Am?o\D*/i,      "Amos"],                                   //Amo.
   [/^O[ba]\D*/i,      "Obad"],                                  //Oba.
   [/^Jo?[n]a\D*/i,      "Jonah"],[/^Yu?[n]\D*/i,      "Jonah"], //Yun.
