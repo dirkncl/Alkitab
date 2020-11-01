@@ -35,9 +35,10 @@ else if(InputString.includes("--")){
 else{
     ref_ayat = InputString
     bible_version = ""
-}  
+} 
+bg()
 window.onload= function(){
-  bg()
+  
   alkitab(ref_ayat,bible_version)
 }
 
