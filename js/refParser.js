@@ -82,7 +82,7 @@
   [/^L[ev]\D*/i,      "Lev"],[/^I[ma]\D*/i,      "Lev"],        //Ima.
   [/^Nu\D*/i,      "Num"],[/^Bi\D*/i,      "Num"],              //Bil.
   [/^D[eu]\D*/i,      "Deut"],[/^U[l]\w*a\D*/i,      "Deut"],   //Ula.
-  [/^J[o]s\D*/i,      "Josh"],[/^Y[o]s\D*/i,      "Josh"],      //Yos.
+  [/^J[o]s\D*/i,      "Josh"],[/^Y[o]s\D*/i,      "Josh"],[/^Ys\D*/i,      "Josh"],      //Yos.
   [/^Judg\D*/i,      "Judg"],[/^H?a[k]\D*/i,      "Judg"],      //Hak.
   [/^R[ut]\D*/i,      "Ruth"],                                  //Rut.
   [/^1\s*S[am]\D*/i,    "1Sam"],                                //1Sam.
@@ -105,7 +105,7 @@
   [/^E[zek]\D*/i,      "Ezek"],[/^Y[e?h]\D*/i,      "Ezek"],    //Yeh.
   [/^D[a]?n\D*/i,      "Dan"],                                  //Dan.
   [/^H[os]\D*/i,      "Hos"],                                   //Hos.
-  [/^Joe\D*/i,      "Joel"],[/^Y[l|oe]\D*/i,      "Joel"],      //Yoe.
+  [/^Joe\D*/i,      "Joel"],[/^Yoe\D*/i,      "Joel"],          //Yoe.
   [/^Am?o\D*/i,      "Amos"],                                   //Amo.
   [/^O[ba]\D*/i,      "Obad"],                                  //Oba.
   [/^Jo?[n]a\D*/i,      "Jonah"],[/^Yu?[n]\D*/i,      "Jonah"], //Yun.
@@ -125,7 +125,7 @@
   [/^1\s*C\D*/i,    "1Cor"],[/^1\s*Kor\D*/i,    "1Cor"],        //1Kor.
   [/^2\s*C\D*/i,    "2Cor"], [/^2\s*Kor\D*/i,    "2Cor"],       //2Kor.
   [/^Gal\D*/i,      "Gal"],                                     //Gal.
-  [/^Eph\D*/i,      "Eph"],[/^E[fe]\D*/i,      "Eph"],            //Efe.
+  [/^Eph\D*/i,      "Eph"],[/^Efe\D*/i,      "Eph"],            //Efe.
   [/^P[h]il\D*/i,      "Phil"],[/^Flp\D*/i,      "Phil"],[/^Fil[i]\D*/i,      "Phil"],        //Flp.
   [/^C\D*/i,      "Col"],[/^K[o]l\D*/i,      "Col"],            //Kol.
   [/^1\s*Th\D*/i,    "1Thess"],[/^1\s*Te\D*/i,    "1Thess"],    //1Tes.
