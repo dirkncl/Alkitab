@@ -39,8 +39,8 @@ else{
 }
   
 window.onload= function(){
-  alkitab(ref_ayat,bible_version)
   bg()
+  alkitab(ref_ayat,bible_version)
 }
 function alkitab(verse_refrence, version){
   version = version||"TB"
