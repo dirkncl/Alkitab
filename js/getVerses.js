@@ -1,4 +1,4 @@
-﻿/*************************************/
+/*************************************/
 /*     Dirk L. Nicolaas              */
 /*    Masih dalam tahap proses       */ 
 /*  belajar dari yang sederhana      */
@@ -31,19 +31,20 @@ else if(InputString.includes("--")){
   InputString = InputString.split("--")
   ref_ayat = InputString[0].trim()
   bible_version = InputString[1].trim()
+  
 }
 else{
     ref_ayat = InputString
     bible_version = ""
-} 
-
-window.onload= function(){
-  bg()  
-  alkitab(ref_ayat,bible_version)
 }
-
+  
+window.onload= function(){
+  alkitab(ref_ayat,bible_version)
+  bg()
+}
 function alkitab(verse_refrence, version){
   version = version||"TB"
+
   var ver;
   var alkitabDB;
   alkitabDB={
@@ -52,6 +53,7 @@ function alkitab(verse_refrence, version){
     en_akjv:"data/bible-akjv"
   };
   var versionName
+  var Language;
   switch (version.toUpperCase()){
     case "": 
     case "TB-LAI":
@@ -60,7 +62,8 @@ function alkitab(verse_refrence, version){
     case "KJV":ver = alkitabDB.en_kjv; versionName = "Bible (KJV - 1769)";Language = "EN";break;
     case "A-KJV":
     case "AKJV":ver = alkitabDB.en_akjv; versionName = "Bible (American - KJV)";Language = "EN";break;
-  }  
+  }
+  
   var alkitabArray=[]; 
   function loadingKitab(alk){
     var xhr = new XMLHttpRequest();
@@ -100,18 +103,25 @@ function alkitab(verse_refrence, version){
   var hasil = [];
   var result = "";
   var inputAlkitab;
+  
+  //for display
+  var bookName;
+  var displayVerseRef
   if (verse_refrence !== ""){
     loadingKitab(ver);
+
+    
     inputAlkitab = verse_refrence
     var check = toSemiOsis(inputAlkitab).split(".")
-    var bookName = check[0];
-    var bk = normBookName[Language][bookName]+" "+verse_refrence.split(" ")[1]
-    bk = bk+" "+version;
-    //console.log(bk)
+    bookName = check[0];
+    
+    var displayVerseRef = normBookName[Language][bookName]+" "+verse_refrence.split(" ")[1]
+    displayVerseRef = displayVerseRef+" "+version;
+    
     document.getElementById('version').className = "blink";
     document.getElementById('version').innerHTML = versionName;
-    document.getElementById('ref_ayat').innerHTML = "<small>"+verse_refrence+" "+version+"</small><br><i class='blink1'>"+bk+"</i>";
-    document.title = bk;
+    document.getElementById('ref_ayat').innerHTML = "<small>"+verse_refrence+" "+version+"</small><br>"
+
     if(check.length>1){
       proses(window.event);
     }
@@ -122,13 +132,14 @@ function alkitab(verse_refrence, version){
   }
 
   function proses(e){
+    
     e.preventDefault();
     result = "";
-
+    
     Kitab_Pasal_Ayat = inputAlkitab;
+    
     Kitab_Pasal_Ayat = PraParser(Kitab_Pasal_Ayat);
     
-    console.log(Kitab_Pasal_Ayat)
     var kitab = Kitab_Pasal_Ayat.kitab,
         pasal = Kitab_Pasal_Ayat.pasal,
         ayat = Kitab_Pasal_Ayat.ayat;
@@ -140,8 +151,30 @@ function alkitab(verse_refrence, version){
     }  
     else {
       hasil[0] = toSemiOsis(kitab+" "+pasal+":"+ayat+"")
+      
     }
     if(Kitab_Pasal_Ayat=="")ayatToDisplay.style.display = 'none';
+    
+    //display sesungguhnya
+    var verse = "";
+    if(inputAlkitab.includes("-")){verse = ayat[0]+"-"+ayat[ayat.length-1]}
+    
+    else if(inputAlkitab.includes(",")) {
+      for(var i=0;i<ayat.length-1;i++){
+        verse += ayat[i]+","    
+      }
+      verse +=ayat[ayat.length-1]
+    }else{
+      verse = ayat
+    }
+    
+    //display 
+    displayVerseRef = normBookName[Language][bookName]+" "+pasal+":"+verse
+    console.log(displayVerseRef)
+    
+    displayVerseRef += " "+version
+    document.getElementById('ref_ayat').innerHTML += "<i class='blink1'>"+displayVerseRef+"</i>";
+    document.title = displayVerseRef;
   };
 
   function prosesBook(e){
@@ -155,17 +188,24 @@ function alkitab(verse_refrence, version){
     var pas=0;
     for(var i = 0;i<ayat.length;i++){
        if(ayat[i]==="1") pas +=1;
-       //console.log(kitab[0]+" "+pas+":"+ayat[i])
         hasil[i] = toSemiOsis(kitab[0]+" "+pas+":"+ayat[i]+"")
     }
     if(Kitab_Pasal_Ayat=="")ayatToDisplay.style.display = 'none';
+    
+    //display 
+    displayVerseRef = normBookName[Language][bookName]+" "+1+":"+1+"-"+BCV[bookName].length+":"+BCV[bookName][BCV[bookName].length-1]+" "+version
+
+    document.getElementById('ref_ayat').innerHTML += "<i class='blink1'>"+displayVerseRef+"</i>";
+    document.title = displayVerseRef;
+
   };
 
   function display(){
     content.innerHTML = "";
     ayatToDisplay.style.display='block';
     content.style.textAlign='left';
-    var sup,sup2;
+    var sup, sup2;
+
     if(hasil.length>1){
       for(var i=0;i<hasil.length;i++){
         var osisSplit = hasil[i].split(".");
@@ -201,6 +241,7 @@ function alkitab(verse_refrence, version){
       result = sup + getAyatAlkitab(hasil[0]);
       content.innerHTML="<br>"+result+"<br><br>";
     }
+  
   };
   
   function clear(){
