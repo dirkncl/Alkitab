@@ -55,13 +55,12 @@ function alkitab(verse_refrence, version){
   switch (version.toUpperCase()){
     case "": 
     case "TB-LAI":
-    case "TB": ver = alkitabDB.id_TB;   versionName = "Alkitab (TB - LAI)";break;
+    case "TB": ver = alkitabDB.id_TB;   versionName = "Alkitab (TB - LAI)";Language = "ID";break;
     case "AV":
-    case "KJV":ver = alkitabDB.en_kjv; versionName = "Bible (KJV - 1769)";break;
+    case "KJV":ver = alkitabDB.en_kjv; versionName = "Bible (KJV - 1769)";Language = "EN";break;
     case "A-KJV":
-    case "AKJV":ver = alkitabDB.en_akjv; versionName = "Bible (American - KJV)";break;
-  }
-  
+    case "AKJV":ver = alkitabDB.en_akjv; versionName = "Bible (American - KJV)";Language = "EN";break;
+  }  
   var alkitabArray=[]; 
   function loadingKitab(alk){
     var xhr = new XMLHttpRequest();
@@ -103,13 +102,16 @@ function alkitab(verse_refrence, version){
   var inputAlkitab;
   if (verse_refrence !== ""){
     loadingKitab(ver);
-    document.getElementById('version').className = "blink";
-    document.getElementById('version').innerHTML = versionName;
-    document.getElementById('ref_ayat').innerHTML = verse_refrence+" "+version;
-    //document.title = versionName;
-    document.title = verse_refrence+" "+version;
     inputAlkitab = verse_refrence
     var check = toSemiOsis(inputAlkitab).split(".")
+    var bookName = check[0];
+    var bk = normBookName[Language][bookName]+" "+verse_refrence.split(" ")[1]
+    bk = bk+" "+version;
+    //console.log(bk)
+    document.getElementById('version').className = "blink";
+    document.getElementById('version').innerHTML = versionName;
+    document.getElementById('ref_ayat').innerHTML = "<small>"+verse_refrence+" "+version+"</small><br><i class='blink1'>"+bk+"</i>";
+    document.title = bk;
     if(check.length>1){
       proses(window.event);
     }
@@ -273,5 +275,24 @@ var scrollbarAndBlink = `
     -moz-animation: blink 3s linear infinite;
     animation: blink 3s linear infinite;
   }
+  @keyframes blink1 {  
+    0% { color: lightgoldenrodyellow; }
+    25% { color: papayawhip; }
+    50% { color: moccasin; }
+    75% { color: peachpuff; }
+    100% { color: palegoldenrod; }
+  }
+  @-webkit-keyframes blink1 {
+    0% { color: lightgoldenrodyellow; }
+    25% { color: papayawhip; }
+    50% { color: moccasin; }
+    75% { color: peachpuff; }
+    100% { color: palegoldenrod; }
+  }
+  .blink1 {
+    -webkit-animation: blink 10s linear infinite;
+    -moz-animation: blink 10s linear infinite;
+    animation: blink 10s linear infinite;
+  }  
 `;
 (sty=document.createElement("style")).textContent=scrollbarAndBlink,document.head.appendChild(sty)
