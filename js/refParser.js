@@ -76,14 +76,16 @@
     "Jude":[25],
     "Rev":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,20]
   };    
-  var FilterKitab = [
+var FilterKitab = [
   [/^G[en]\D*/i,      "Gen"],[/^K[e]?j\D*/i,      "Gen"],       //Kej.
   [/^Ex\D*/i,      "Exod"], [/^K[e]?l\D*/i,      "Exod"],       //Kel.
   [/^L[ev]\D*/i,      "Lev"],[/^I[ma]\D*/i,      "Lev"],        //Ima.
-  [/^Nu\D*/i,      "Num"],[/^Bi\D*/i,      "Num"],              //Bil.
-  [/^D[eu]\D*/i,      "Deut"],[/^U[l]\w*a\D*/i,      "Deut"],   //Ula.
-  [/^J[o]s\D*/i,      "Josh"],[/^Y[o]s\D*/i,      "Josh"],[/^Ys\D*/i,      "Josh"],      //Yos.
-  [/^Judg\D*/i,      "Judg"],[/^H?a[k]\D*/i,      "Judg"],      //Hak.
+  [/^Nu\D*/i,      "Num"],[/^B[il]\D*/i,      "Num"],           //Bil.
+  [/^D[eu]\D*/i,      "Deut"],[/^U[la]\D*/i,      "Deut"],      //Ula.
+  [/^J[o]s\D*/i,      "Josh"],[/^Y[o]s\D*/i,      "Josh"],      //Yos.
+  [/^Ys\D*/i,      "Josh"],                                     //Yos.
+  [/^Judg\D*/i,      "Judg"],[/^Hk\D*/i,      "Judg"],          //Hak.
+  [/^Hak\D*/i,      "Judg"],                                    //Hak.
   [/^R[ut]\D*/i,      "Ruth"],                                  //Rut.
   [/^1\s*S[am]\D*/i,    "1Sam"],                                //1Sam.
   [/^2\s*S[am]\D*/i,    "2Sam"],                                //2Sam.
@@ -94,19 +96,21 @@
   [/^E[z]?r\D*/i,      "Ezra"],                                 //Ezr.
   [/^N[eh]\D*/i,      "Neh"],                                   //Neh.
   [/^E?st\D*/i,      "Esth"],                                   //Est.
-  [/^J[o]?b\D*/i,      "Job"],[/^Ayb\D*/i,      "Job"],[/^Ayub\D*/i,      "Job"],         //Ayb.
+  [/^J[o]?b\D*/i,      "Job"],[/^Ay[u]?b\D*/i,      "Job"],     //Ayb.
   [/^P[s]\D*/i,      "Ps"],[/^Ma?z\D*/i,      "Ps"],            //Maz.
   [/^P[r]?o\D*/i,      "Prov"],[/^A[m]?s\D*/i,      "Prov"],    //Ams.
-  [/^E[cc]\D*/i,      "Eccl"],[/^Pkh\D*/i,      "Eccl"], [/^Pen\D*/i,      "Eccl"],        //Pkh.
+  [/^E[cc]\D*/i,      "Eccl"],[/^Pkh\D*/i,      "Eccl"],        //Pkh.
+  [/^Pen\D*/i,      "Eccl"],                                    //Pkh.
   [/^S[o]n\D*/i,      "Song"],[/^Kid\D*/i,      "Song"],        //Kid.
-  [/^I[s?a]\D*/i,      "Isa"],[/^Ye[s]\D*/i,      "Isa"],       //Yes.
+  [/^I[s?a]\D*/i,      "Isa"],[/^Yes\D*/i,      "Isa"],         //Yes.
   [/^J[er]\D*/i,      "Jer"],[/^Ye[r?]\D*/i,      "Jer"],       //Yer.
-  [/^L[am]\D*/i,      "Lam"],[/^R[at]\D*/i,      "Lam"],        //Rat.
-  [/^E[zek]\D*/i,      "Ezek"],[/^Y[e?h]\D*/i,      "Ezek"],    //Yeh.
+  [/^L[am]\D*/i,      "Lam"],[/^R[a]t\D*/i,      "Lam"],        //Rat.
+  [/^E[zek]\D*/i,      "Ezek"],[/^Y[ehz]\D*/i,      "Ezek"],    //Yeh.
   [/^D[a]?n\D*/i,      "Dan"],                                  //Dan.
   [/^H[os]\D*/i,      "Hos"],                                   //Hos.
-  [/^Joe\D*/i,      "Joel"],[/^Yoe\D*/i,      "Joel"],          //Yoe.
-  [/^Am?o\D*/i,      "Amos"],                                   //Amo.
+  [/^Joe\D*/i,      "Joel"],[/^Yl\D*/i,      "Joel"],           //Yoe.
+  [/^Yoe\D*/i,      "Joel"],                                    //Yoe.
+  [/^A[m?o]\D*/i,      "Amos"],                                 //Amo.
   [/^O[ba]\D*/i,      "Obad"],                                  //Oba.
   [/^Jo?[n]a\D*/i,      "Jonah"],[/^Yu?[n]\D*/i,      "Jonah"], //Yun.
   [/^Mi\D*/i,      "Mic"],                                      //Mik.
@@ -118,31 +122,35 @@
   [/^Ma?l\D*/i,      "Mal"],                                    //Mal.
   [/^Ma?t?t\D*/i,    "Matt"],                                   //Mat.
   [/^Ma?[rk]\D*/i,  "Mark"],                                    //Mar.
-  [/^L\D*/i,      "Luke"],                                      //Luk.
-  [/^Jo?[hn]\D*/i,  "John"],[/^Yo?[h]\D*/i,  "John"],          //Yoh.
+  [/^L[uk]\D*/i,      "Luke"],                                  //Luk.
+  [/^Jo?[hn]\D*/i,  "John"],[/^Yo?[h]\D*/i,  "John"],           //Yoh.
   [/^Act\D*/i,      "Acts"],[/^Kis*/i,      "Acts"],            //Kis.
+  [/^Ras?/i,      "Acts"],                                      //Kis.
   [/^R[om]\D*/i,    "Rom"],                                     //Rom.
   [/^1\s*C\D*/i,    "1Cor"],[/^1\s*Kor\D*/i,    "1Cor"],        //1Kor.
   [/^2\s*C\D*/i,    "2Cor"], [/^2\s*Kor\D*/i,    "2Cor"],       //2Kor.
   [/^Gal\D*/i,      "Gal"],                                     //Gal.
-  [/^Eph\D*/i,      "Eph"],[/^Efe\D*/i,      "Eph"],            //Efe.
-  [/^P[h]il\D*/i,      "Phil"],[/^Flp\D*/i,      "Phil"],[/^Fil[i]\D*/i,      "Phil"],        //Flp.
-  [/^C\D*/i,      "Col"],[/^K[o]l\D*/i,      "Col"],            //Kol.
+  [/^Eph\D*/i,      "Eph"],[/^Ef[ef]\D*/i,      "Eph"],         //Efe.
+  [/^Phlp\D*/i,      "Phil"], [/^P[h]il?i\D*/i,      "Phil"],   //Flp.
+  [/^Flp\D*/i,      "Phil"],[/^Fil[i]\D*/i,      "Phil"],       //Flp.
+  [/^C\D*/i,      "Col"],[/^Kol\D*/i,      "Col"],              //Kol.
   [/^1\s*Th\D*/i,    "1Thess"],[/^1\s*Te\D*/i,    "1Thess"],    //1Tes.
   [/^2\s*Th\D*/i,    "2Thess"],[/^2\s*Te\D*/i,    "2Thess"],    //2Tes.
   [/^1\s*T[im]\D*/i,  "1Tim"],                                  //1Tim.
   [/^2\s*T[im]\D*/i,  "2Tim"],                                  //2Tim.
   [/^Tit\D*/i,      "Titus"],                                   //Tit.
-  [/^Ph\w*m\D*/i,    "Phlm"],[/^Fl\w*m\D*/i,    "Phlm"],[/^Fi[l]\w*e\D*/i,    "Phlm"],         //Flm.
+  [/^Ph\w*m\D*/i,    "Phlm"],[/^Phil?e\D*/i,    "Phlm"],        //Flm.  
+  [/^Fl\w*m\D*/i,    "Phlm"],[/^Fi[l]\w*e\D*/i,    "Phlm"],     //Flm.
   [/^Heb\D*/i,      "Heb"],[/^Ibr\D*/i,      "Heb"],            //Ibr.
-  [/^J[mas]\D*/i,    "Jas"],[/^Y?ak\D*/i,    "Jas"],          //Yak.
-  [/^1\s*P\D*/i,    "1Pet"],                                    //1Pet.
-  [/^2\s*P\D*/i,    "2Pet"],                                    //2Pet.
-  [/^1\s*J\D*/i,    "1John"],[/^1\s*Yo?[ha]\D*/i,    "1John"],        //1Yoh.
-  [/^2\s*J\D*/i,    "2John"],[/^2\s*Yo?[ha]\D*/i,    "2John"],        //2Yoh.
-  [/^3\s*J\D*/i,    "3John"],[/^3\s*Yo?[ha]\D*/i,    "3John"],        //3Yoh.
+  [/^J[ams]\D*/i,    "Jas"],[/^Y?ak\D*/i,    "Jas"],            //Yak.
+  [/^1\s*Pet\D*/i,    "1Pet"],[/^1\s*Ptr\D*/i,    "1Pet"],      //1Pet.
+  [/^2\s*Pet\D*/i,    "2Pet"],[/^2\s*Ptr\D*/i,    "2Pet"],      //2Pet.
+  [/^1\s*J\D*/i,    "1John"],[/^1\s*Yo?[h]\D*/i,    "1John"],   //1Yoh.
+  [/^2\s*J\D*/i,    "2John"],[/^2\s*Yo?[h]\D*/i,    "2John"],   //2Yoh.
+  [/^3\s*J\D*/i,    "3John"],[/^3\s*Yo?[h]\D*/i,    "3John"],   //3Yoh.
   [/^Jud\D*/i,      "Jude"],[/^Yu\D*/i,      "Jude"],           //Yud.
-  [/^R[ev]\D*/i,    "Rev"],[/^W[ah]\D*/i,    "Rev"], [/^Why\D*/i,    "Rev"]             //Wah.
+  [/^R[ev]\D*/i,    "Rev"],[/^W[ah]\D*/i,    "Rev"],            //Wah.
+  [/^Why\D*/i,    "Rev"]                                        //Wah.
 ];
 
 function toSemiOsis(ref){
