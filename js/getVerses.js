@@ -37,8 +37,49 @@ else{
     ref_ayat = InputString
     bible_version = ""
 }
+
+document.onreadystatechange = function(){
+  var editholder = document.getElementById("editholder");
+  editholder.setAttribute("disabled",true);
   
+  var go = document.getElementById("go");
+  go.setAttribute("disabled",true);
+  
+  var edit = document.getElementById("edit");
+  edit.setAttribute("contenteditable",false)
+  editholder.setAttribute("disabled",true);
+
+  edit.onclick = function(){
+     editholder.setAttribute("disabled",false);
+     edit.setAttribute("contenteditable",true)
+   }
+   edit.ontouchstart = function(){
+     editholder.setAttribute("disabled",false);
+     edit.setAttribute("contenteditable",true)
+   }
+  
+  var savedContent = edit.innerHTML;
+  var newContent = "";
+  edit.addEventListener('keypress', function (e) {
+    if ( edit.innerHTML !== savedContent ) {go.disabled = false;}
+    if (e.which == 13) {
+      editholder.setAttribute("disabled",true);
+      edit.setAttribute("contenteditable",false)
+      go.focus()
+      go.select()
+    }
+  });
+
+  go.addEventListener('click', function () {
+    newContent = edit.innerHTML;
+    window.location.search = newContent.replace(/(<([^>]+)>)/ig, "")
+  });  
+}
+
 window.onload= function(){
+  var edit = document.getElementById("edit");
+  edit.innerHTML = decodeURIComponent(window.location.search.replace('?',''))
+  
   bg()
   alkitab(ref_ayat,bible_version)
 }
