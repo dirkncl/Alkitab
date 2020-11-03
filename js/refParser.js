@@ -246,23 +246,7 @@ function toSemiOsis(ref){
 
 
 //KITAB Pasal:Ayat k_p_a
-var testFirstChar;
 var PraParser = function (k_p_a) {
-    testFirstChar = k_p_a[0];
-    if(testFirstChar===Number(testFirstChar)){
-      var item1 = k_p_a.substring(0, k_p_a.lastIndexOf(" "))
-      var item2 = k_p_a.substring(k_p_a.lastIndexOf(" ") + 1);
-      item1 = item1.replace(/ +/g, '')
-      k_p_a = item1+item2
-    }
-    else if(k_p_a[0].indexOf(" ")){
-      var item1 = k_p_a.substring(0, k_p_a.indexOf(" "))
-      var item2 = k_p_a.substring(k_p_a.indexOf(" ") + 1);
-      item1 = item1.replace(/ +/g, '')
-      item2 = item2.replace(/ +/g, '')
-      k_p_a = item1+item2
-      
-    }  
     var Alkitab = {
         kitab: null,
         pasal: null,
