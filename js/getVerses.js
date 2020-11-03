@@ -170,8 +170,9 @@ function alkitab(verse_refrence, version){
     
     //display 
     displayVerseRef = normBookName[Language][bookName]+" "+pasal+":"+verse
-    console.log(displayVerseRef)
-    
+    //console.log(displayVerseRef)
+    if(displayVerseRef.length>30) displayVerseRef = displayVerseRef.substring(0, 30)+" ... "+verse[verse.length-3]+","+verse[verse.length-2]+","+verse[verse.length-1];
+
     displayVerseRef += " "+version
     document.getElementById('ref_ayat').innerHTML += "<i class='blink1'>"+displayVerseRef+"</i>";
     document.title = displayVerseRef;
