@@ -66,7 +66,6 @@ document.onreadystatechange = function(){
       editholder.setAttribute("disabled",true);
       edit.setAttribute("contenteditable",false)
       go.focus()
-      go.select()
     }
   });
 
