@@ -52,10 +52,12 @@ document.onreadystatechange = function(){
   edit.onclick = function(){
      editholder.setAttribute("disabled",false);
      edit.setAttribute("contenteditable",true)
+     edit.innerHTML = ""
    }
    edit.ontouchstart = function(){
      editholder.setAttribute("disabled",false);
      edit.setAttribute("contenteditable",true)
+     edit.innerHTML = ""
    }
   
   var savedContent = edit.innerHTML;
@@ -63,9 +65,11 @@ document.onreadystatechange = function(){
   edit.addEventListener('keypress', function (e) {
     if ( edit.innerHTML !== savedContent ) {go.disabled = false;}
     if (e.which == 13) {
+      if( edit.innerHTML === "")edit.innerHTML = "Yoh 3:16";      
       editholder.setAttribute("disabled",true);
       edit.setAttribute("contenteditable",false)
       go.focus()
+      go.click()
     }
   });
 
