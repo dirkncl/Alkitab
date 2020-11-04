@@ -14,8 +14,13 @@ body{
   -webkit-background-size: 800px;
   -moz-background-size: 800px;
   -o-background-size: 800px;
-  background-size: cover;
+
+  background-size: cover!important;
   background-position: center;
+  width: 100vw;
+  height:100vh;
+  overflow:hidden;
+  
 }
 
 hr{
