@@ -16,7 +16,7 @@ if(InputString.includes("&")){
   inputs = InputString.split("&")
   InputString = inputs[0]
 }
-
+/*
 if(InputString.includes("[")){
   InputString = InputString.split("[")
   ref_ayat = InputString[0].trim()
@@ -32,7 +32,34 @@ else if(InputString.includes("--")){
   ref_ayat = InputString[0].trim()
   bible_version = InputString[1].trim()
   
-}else if(InputString.includes(".")){
+}else 
+*/
+if(InputString.includes("[")){
+  var inpStr=[];
+  inpStr[0] = InputString.substring(0, InputString.lastIndexOf("["));
+  inpStr[1] = InputString.substring(InputString.lastIndexOf("[") + 1);
+  if(inpStr[1].includes("]")){
+    inpStr[1] = inpStr[1].replace("]","")
+  }
+  InputString = inpStr[0] + "." + inpStr[1]
+}
+else if(InputString.includes("(")){
+  var inpStr=[];
+  inpStr[0] = InputString.substring(0, InputString.lastIndexOf("("));
+  inpStr[1] = InputString.substring(InputString.lastIndexOf("(") + 1);
+  if(inpStr[1].includes(")")){
+    inpStr[1] = inpStr[1].replace(")","")
+  }
+  InputString = inpStr[0] + "." + inpStr[1]
+}
+else if(InputString.includes("--")){
+  var inpStr=[];
+  inpStr[0] = InputString.substring(0, InputString.lastIndexOf("--"));
+  inpStr[1] = InputString.substring(InputString.lastIndexOf("--") + 1);
+  inpStr[1] = inpStr[1].replace("-","");
+  InputString = inpStr[0] + "." + inpStr[1]  
+}
+if(InputString.includes(".")){
   var inpStr=[];
   inpStr[0] = InputString.substring(0, InputString.lastIndexOf("."));
   inpStr[1] = InputString.substring(InputString.lastIndexOf(".") + 1);
