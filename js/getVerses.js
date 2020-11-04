@@ -37,7 +37,7 @@ else{
     ref_ayat = InputString
     bible_version = ""
 }
-
+var isMobile=/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent)
 document.onreadystatechange = function(){
   var editholder = document.getElementById("editholder");
   editholder.setAttribute("disabled",true);
@@ -143,6 +143,7 @@ function alkitab(verse_refrence, version){
   var ayatToDisplay = document.getElementById('ayatToDisplay');
   var content = document.getElementById('content');
   content.innerHTML = "";
+  content.style.maxHeight = isMobile?"360px":"450px"  
   var Kitab_Pasal_Ayat = "";
   var hasil = [];
   var result = "";
