@@ -114,11 +114,17 @@ document.onreadystatechange = function(){
 
 window.onload= function(){
   var edit = document.getElementById("edit");
-  edit.innerHTML = decodeURIComponent(window.location.search.replace('?',''))
-  
+  var inp = decodeURIComponent(window.location.search.replace('?',''))
+  if(inp.includes("&")){
+    inputs = inp.split("&")
+    inp = inputs[0]
+  }
+
+  edit.innerHTML = inp  
   bg()
   alkitab(ref_ayat,bible_version)
 }
+
 function alkitab(verse_refrence, version){
   version = version||"TB"
 
