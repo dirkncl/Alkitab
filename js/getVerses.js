@@ -32,6 +32,12 @@ else if(InputString.includes("--")){
   ref_ayat = InputString[0].trim()
   bible_version = InputString[1].trim()
   
+}else if(InputString.includes(".")){
+  var inpStr=[];
+  inpStr[0] = InputString.substring(0, InputString.lastIndexOf("."));
+  inpStr[1] = InputString.substring(InputString.lastIndexOf(".") + 1);
+  ref_ayat = inpStr[0].trim()
+  bible_version = inpStr[1].trim()
 }
 else{
     ref_ayat = InputString
