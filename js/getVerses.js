@@ -143,7 +143,7 @@ function alkitab(verse_refrence, version){
   var ayatToDisplay = document.getElementById('ayatToDisplay');
   var content = document.getElementById('content');
   content.innerHTML = "";
-  content.style.maxHeight = isMobile?"360px":"450px"  
+  ayatToDisplay.style.maxHeight = isMobile?"360px":"450px"  
   var Kitab_Pasal_Ayat = "";
   var hasil = [];
   var result = "";
