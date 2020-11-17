@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="dirkncl.github.com, pencarian kata/kalimat dalam Alkitab">
+    <meta name="keywords" content="Alkitab, bible">
+    <meta name="author" content="Dirk L. Nicolaas - Sulawesi Utara - Indonesia">
+    <title>Pencarian dalam Alkitab</title>
+    <style> 
+      html{ 
+        background-image:url('../imgs/Siesta Lake, Yosemite National Park, California.jpg'); 
+        background-size:cover; 
+        background-attachment: fixed; 
+      } 
+
+    </style>
+    <script src="../js/search.js"></script>
+  </head>
+  <body>
+    <div style="position:absolute;left:50%;transform: translate(-50%);max-width:60%">
+      <div id = "help" style="background-color:ivory;padding:1%;text-align:center;"></div>
+      <center>
+        <input id="word2search" type="text" placeholder="Yesus"></input>
+        <input id="bookTrans" type="text" style="width:4em" placeholder="TB"></input>
+      </center>
+      <div id="counter" style="background-color:ivory;padding:1%;display:none;text-align:center;"></div>
+    </div>   
+    <div id="search_result" style="position:absolute;left:50%;transform: translate(-50%);bottom:1%;max-height:80%;max-width:60%;overflow-y:auto;background-color:ivory;padding:1%;opacity:0.9;display:none"></div>
+   
+    <script type="text/javascript">
+      
+      var w2s = document.getElementById("word2search");
+      var book_version = document.getElementById("bookTrans"); 
+      
+      book_version.value = book_version.value.toUpperCase()
+      
+      w2s.focus()
+      
+      document.getElementById("help").innerHTML = "Fill in the word/words/sentence to search and tap [enter]"
+      
+      w2s.addEventListener("keyup", function (event) {
+        if(event.keyCode === 13){
+          event.preventDefault();
+          book_version.focus();
+          document.getElementById("help").innerHTML = 'Fill in TB or TB-LAI or KJV or AV or AKJV or A-KJV and tap [enter]'
+          if(book_version.value==="") book_version.value = "TB"
+        }
+        book_version.addEventListener("keyup", function (event) {
+          if(event.keyCode === 13){
+             event.preventDefault();
+             document.getElementById("help").style.display="none"
+             search(w2s.value, book_version.value)
+          }
+        })
+      });
+      
+
+    </script>
+    
+  </body>
+</html>
