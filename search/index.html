@@ -32,8 +32,17 @@
       var w2s = document.getElementById("word2search");
       var book_version = document.getElementById("bookTrans"); 
       
+      var q_s = qs()
+      w2s.value = q_s.q || w2s.value
+      book_version.value = q_s.v || book_version.value
       book_version.value = book_version.value.toUpperCase()
-      
+
+      if(q_s){
+        document.getElementById("help").style.display="none"
+        search(w2s.value, book_version.value)
+      }
+      w2s.onclick = function(){document.getElementById("help").style.display=""}
+      book_version.onclick = function(){document.getElementById("help").style.display=""}
       w2s.focus()
       
       document.getElementById("help").innerHTML = "Fill in the word/words/sentence to search and tap [enter]"
@@ -53,7 +62,17 @@
           }
         })
       });
-      
+      function qs(){
+        var ls = location.search.substring(1);
+        var andSplit = ls.split('&');
+        var result={};
+        andSplit.forEach(function(res, count){
+          var equSplit = res.split('=');
+
+          result[equSplit[0]] = decodeURIComponent(equSplit[1]);
+        });
+        return result;
+      }
 
     </script>
     
