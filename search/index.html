@@ -69,7 +69,7 @@
         andSplit.forEach(function(res, count){
           var equSplit = res.split('=');
 
-          result[equSplit[0]] = decodeURIComponent(equSplit[1]);
+          result[equSplit[0]] = decodeURIComponent(equSplit[1]).replace(/\+/g," ");
         });
         return result;
       }
