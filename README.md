@@ -49,7 +49,7 @@ https://dirkncl.github.io/Alkitab/?Kejadian%201:1,5,7,20
 
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1,5,7,20--KJV
 
-##Pencarian
+## Pencarian
 
 https://dirkncl.github.io/Alkitab/search/?q=Yesus&v=tb
 
