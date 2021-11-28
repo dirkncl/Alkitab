@@ -49,3 +49,14 @@ https://dirkncl.github.io/Alkitab/?Kejadian%201:1,5,7,20
 
 https://dirkncl.github.io/Alkitab/?Kejadian%201:1,5,7,20--KJV
 
+##Pencarian
+
+https://dirkncl.github.io/Alkitab/search/?q=Yesus&v=tb
+
+https://dirkncl.github.io/Alkitab/search/?q=persembahan%20kudus&v=tb
+
+https://dirkncl.github.io/Alkitab/search/?q=Jesus&v=kjv
+
+https://dirkncl.github.io/Alkitab/search/?q=God%20so%20loved%20the%20world&v=kjv
+
+
