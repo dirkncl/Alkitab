@@ -124,7 +124,7 @@ function display_Contents(wordToFind, BookVersion, content) {
       if(words[i].includes(wanted)){
         var verseRef = osisToName(words[i].split("^")[0], BookVersion)
         var verseContent = words[i].split("^")[1].replace(new RegExp(wanted,"g"),"<i style='font-weight:bold'>"+wanted+"</i>")
-        var html = "<div><a target='_page' href='../index.html?"+verseRef+"'>"+verseRef+"</a><br><div>"+verseContent+"</div><div>"
+        var html = "<div><a target='_page' href='../index.html?"+verseRef+"'>"+verseRef+"</a><br><div>"+verseContent+"</div></div>"
         found.push(html)
       }
        
